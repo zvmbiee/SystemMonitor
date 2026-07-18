@@ -36,10 +36,10 @@ double CpuSampler::GetCpuLoad() {
     return load;
 }
 
-long long CpuSampler::FileTimeToMicroseconds(const FILETIME& ft) const {
+uint64_t CpuSampler::FileTimeToMicroseconds(const FILETIME& ft) const {
     ULARGE_INTEGER uli;
     uli.LowPart = ft.dwLowDateTime;
     uli.HighPart = ft.dwHighDateTime;
     
-    return static_cast<long long>(uli.QuadPart / 10);
+    return static_cast<uint64_t>(uli.QuadPart / 10);
 }

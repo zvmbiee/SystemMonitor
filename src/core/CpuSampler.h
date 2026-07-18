@@ -1,6 +1,5 @@
 #pragma once
 #include <windows.h>
-#include <chrono>
 #include <cstdint>
 
 class CpuSampler {
@@ -15,5 +14,5 @@ private:
     uint64_t m_prevUser = 0;
     bool m_isFirstCall;
 
-    long long FileTimeToMicroseconds(const FILETIME& ft) const;
+    uint64_t FileTimeToMicroseconds(const FILETIME& ft) const;
 };
